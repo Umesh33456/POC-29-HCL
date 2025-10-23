@@ -1,8 +1,8 @@
 version: 0.2
 
-# env:
-#   variables:
-#     TF_ROOT: "root"  # path to your root directory
+env:
+  variables:
+    TF_ROOT: "infra"  # 👈 change this to your Terraform directory (example: terraform, infra, etc.)
 
 phases:
   install:
@@ -11,12 +11,18 @@ phases:
     commands:
       - echo "✅ Installing Terraform version"
       - terraform -version
+      - echo "📂 Current working directory:"
       - pwd
+      - echo "📁 Files in current directory:"
+      - ls -la
 
   pre_build:
     commands:
       - echo "🔧 Initializing Terraform in $TF_ROOT"
-      # - cd $TF_ROOT
+      - cd $TF_ROOT
+      - echo "📂 Current directory after cd:"
+      - pwd
+      - ls -la
       - terraform init -input=false
 
   build:
