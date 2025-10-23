@@ -1,0 +1,22 @@
+variable "bucket_name" {
+  type        = string
+  description = "The name of the S3 bucket"
+}
+
+variable "acl" {
+  type        = string
+  default     = "private"
+  description = "ACL for the bucket"
+}
+
+variable "enable_versioning" {
+  type        = bool
+  default     = true
+  description = "Enable versioning for the bucket"
+}
+
+variable "tags" {
+  type        = map(string)
+  default     = {}
+  description = "Tags to apply to the bucket"
+}
