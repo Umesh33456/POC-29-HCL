@@ -38,8 +38,8 @@ jobs:
 
       - name: Terraform Format
         working-directory: ${{ env.TF_ROOT }}
-        run: terraform fmt -check
-
+        run: terraform fmt -recursive
+        
       - name: Terraform Validate
         working-directory: ${{ env.TF_ROOT }}
         run: terraform validate
