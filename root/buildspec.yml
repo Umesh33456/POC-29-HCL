@@ -11,6 +11,7 @@ phases:
     commands:
       - echo "✅ Installing Terraform version"
       - terraform -version
+      - pwd
 
   pre_build:
     commands:
